@@ -1,6 +1,7 @@
 package com.zf;
 
 import com.zf.fanxing_class.Holder;
+import com.zf.fanxing_class.Manipulator;
 import com.zf.fanxing_class.Person;
 import com.zf.fanxing_class.Teacher;
 import org.junit.Test;
@@ -36,5 +37,14 @@ public class FanxingClassTest
         teacher.setType("teacher");
         holder.setT(teacher);
         System.out.println(holder);
+    }
+
+    @Test
+    public void testManipulator()
+    {
+        Teacher teacher = new Teacher();
+        teacher.setName("nick");
+        Manipulator<Teacher> manipulator = new Manipulator<>(teacher);
+        manipulator.manipulate();
     }
 }
