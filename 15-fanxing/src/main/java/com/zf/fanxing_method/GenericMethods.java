@@ -1,5 +1,9 @@
 package com.zf.fanxing_method;
 
+import com.zf.fanxing_class.EnTeacher;
+import com.zf.fanxing_class.Person;
+import com.zf.fanxing_class.Teacher;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,5 +24,17 @@ public class GenericMethods
             list.add(item);
         }
         return list;
+    }
+
+    public static void writeTo(List<? super Person> persons)
+    {
+        persons.add(new Person());
+        persons.add(new Teacher());
+    }
+
+    public static void writeTo2(List<? super Teacher> teachers)
+    {
+        teachers.add(new Teacher());
+        teachers.add(new EnTeacher());
     }
 }

@@ -1,11 +1,16 @@
 package com.zf;
 
+import com.zf.fanxing_class.Person;
+import com.zf.fanxing_class.Teacher;
 import com.zf.fanxing_method.GenericMethods;
+import com.zf.fanxing_method.GenericReading;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -30,4 +35,19 @@ public class FanxingMethod
         List<String> list = GenericMethods.makeList("abc", "vvv", "gg");
         System.out.println(list);
     }
+
+    @Test
+    public void testWriteTo()
+    {
+        List<Person> personList = new ArrayList<>();
+        GenericMethods.writeTo(personList);
+        System.out.println(personList);
+    }
+
+//    @Test
+//    public void testWriteTo2()
+//    {
+//        List<Teacher> teacherList = new ArrayList<Teacher>();
+//        GenericMethods.writeTo2(teacherList);
+//    }
 }

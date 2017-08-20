@@ -40,6 +40,26 @@ public class FanxingClassTest
     }
 
     @Test
+    public void testHolder2()
+    {
+        Holder<Teacher> teacherHolder = new Holder<>();
+        Teacher teacher = new Teacher();
+        teacher.setName("zf");
+        teacher.setAge(43);
+        teacher.setType("teacher");
+        teacherHolder.setT(teacher);
+
+        // cannot upcast
+//        Holder<Person> personHolder = teacherHolder;
+        Holder<? extends Person> personHolder = teacherHolder;
+        Teacher teacher1 = (Teacher) personHolder.getT();
+        System.out.println(teacher1);
+        // cannot call set()
+//        personHolder.setT(new Person());
+//        personHolder.setT(new Teacher());
+    }
+
+    @Test
     public void testManipulator()
     {
         Teacher teacher = new Teacher();
